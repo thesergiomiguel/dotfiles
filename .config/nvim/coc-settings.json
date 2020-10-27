@@ -1,0 +1,31 @@
+{
+  "typescript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBrackets": true,
+  "diagnostic.errorSign": "✘",
+  "diagnostic.warningSign": "¿",
+  "diagnostic.warningSign": "؟",
+  "diagnostic.warningSign": "✘",
+  "diagnostic.infoSign": "ϙ",
+  "diagnostic.infoSign": "ؠ ",
+  "diagnostic.infoSign": "أ",
+  "diagnostic.infoSign": "أ",
+  "diagnostic.infoSign": "؟",
+  "eslint.options": {
+    "configFile": "./.eslintrc.js"
+  },
+  "eslint.filetypes": [
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact"
+  ],
+  "coc.preferences.formatOnSaveFiletypes": [
+    "css",
+    "scss",
+    "javascript",
+    "javascript.jsx",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact"
+  ],
+  "prettier.eslintIntegration": true
+}

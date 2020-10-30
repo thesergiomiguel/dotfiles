@@ -102,6 +102,8 @@ call plug#begin('~/.vim/plugged')
   Plug 'sickill/vim-pasta'
 
   " General
+  Plug 'junegunn/fzf'
+  Plug 'junegunn/fzf.vim'
   Plug 'itchyny/lightline.vim'
     let g:lightline = {
           \ 'colorscheme': 'wombat',

@@ -247,6 +247,10 @@ inoremap <expr> <tab>   pumvisible() ? "\<c-n>" : "\<tab>"
 inoremap <expr> <s-tab> pumvisible() ? "\<c-p>" : "\<s-tab>"
 inoremap <silent> <expr> <cr> pumvisible() ? coc#_select_confirm() : "\<c-g>u\<cr>\<c-r>=coc#on_enter()\<CR>"
 
+" fzf
+nnoremap <silent> <c-W> <cmd>Windows<cr>
+nnoremap <silent> <c-B> <cmd>Buffers<cr>
+
 " LSP specific
 nmap <silent> K           <cmd>call <sid>show_documentation()<cr>
 nmap <silent> <c-k>       <plug>(coc-diagnostic-prev)

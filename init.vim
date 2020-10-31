@@ -250,6 +250,7 @@ inoremap <silent> <expr> <cr> pumvisible() ? coc#_select_confirm() : "\<c-g>u\<c
 " fzf
 nnoremap <silent> <c-W> <cmd>Windows<cr>
 nnoremap <silent> <c-B> <cmd>Buffers<cr>
+nnoremap <silent> <c-F> <cmd>Ag<cr>
 
 " LSP specific
 nmap <silent> K           <cmd>call <sid>show_documentation()<cr>

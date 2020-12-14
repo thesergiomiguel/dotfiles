@@ -1,18 +1,11 @@
 " vim: foldmethod=marker
 
-" {{{ 0. TODO
-" - setup diagnostics
-" - setup prettier/format on save
-" - fzf
-" - search files/text
-" }}}
-
 " {{{ 1. Settings
 filetype plugin indent on
 syntax on
 
 set number
-set norelativenumber
+set relativenumber
 set nowrap
 set updatetime=300
 set nobackup
@@ -203,8 +196,8 @@ autocmd User CocDiagnosticChange call lightline#update()
 
 " {{{ 5. Mappings
 " Editing
-nnoremap <c-s> <cmd>write<cr>
-nnoremap <c-q> <cmd>xit<cr>
+nnoremap <c-S> <cmd>write<cr>
+nnoremap <c-Q> <cmd>xit<cr>
 
 " 'inside next parenthesis'
 onoremap <silent> in( :<c-u>normal! f(vi(<cr>
@@ -248,9 +241,10 @@ inoremap <expr> <s-tab> pumvisible() ? "\<c-p>" : "\<s-tab>"
 inoremap <silent> <expr> <cr> pumvisible() ? coc#_select_confirm() : "\<c-g>u\<cr>\<c-r>=coc#on_enter()\<CR>"
 
 " fzf
-nnoremap <silent> <c-W> <cmd>Windows<cr>
-nnoremap <silent> <c-B> <cmd>Buffers<cr>
-nnoremap <silent> <c-F> <cmd>Ag<cr>
+nnoremap <silent> <leader><c-W> <cmd>Windows<cr>
+nnoremap <silent> <leader><c-B> <cmd>Buffers<cr>
+nnoremap <silent> <leader><c-F> <cmd>Ag<cr>
+nnoremap <silent> <c-P> <cmd>Files<cr>
 
 " LSP specific
 nmap <silent> K           <cmd>call <sid>show_documentation()<cr>

@@ -112,6 +112,14 @@ call plug#begin('~/.vim/plugged')
     let g:oceanic_material_allow_undercurl=1
     let g:oceanic_material_background = 'ocean'
 
+  " Navigation
+  Plug 'skamsie/vim-lineletters'
+    let g:lineletters_settings = {
+        \ 'prefix_chars': [',', 'j', 'f'],
+        \ 'highlight_group': 'LineNr',
+        \ 'after_jump_do': '^'
+        \ }
+
   " Lang
   Plug 'jph00/swift-apple'
   Plug 'HerringtonDarkholme/yats.vim'
@@ -227,6 +235,7 @@ nnoremap <leader><s-tab> <cmd>bprevious<cr>
 " Navigation
 nnoremap H ^
 nnoremap L $
+nmap <silent> <leader>L <Plug>LineLetters
 
 " Editing
 inoremap <esc> <nop>

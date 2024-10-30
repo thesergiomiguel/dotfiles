@@ -1,0 +1,13 @@
+#!/bin/bash
+
+if [[ ! -z "$@" ]]; then
+  git checkout "$@"
+  exit 0
+fi
+
+if ! command -v fzf >/dev/null 2>&1; then
+    echo "fzf not found. Panic."
+    exit 1
+fi
+
+git checkout $(git for-each-ref refs/heads/ --format='%(refname:short)' 2> /dev/null | fzf)

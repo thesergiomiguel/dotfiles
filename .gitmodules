@@ -1,0 +1,9 @@
+[submodule "zsh/vendor/zsh-z"]
+	path = zsh/vendor/zsh-z
+	url = https://github.com/agkozak/zsh-z.git
+[submodule "zsh/vendor/zsh-autosuggestions"]
+	path = zsh/vendor/zsh-autosuggestions
+	url = https://github.com/zsh-users/zsh-autosuggestions
+[submodule "zsh/vendor/zsh-syntax-highlighting"]
+	path = zsh/vendor/zsh-syntax-highlighting
+	url = https://github.com/zsh-users/zsh-syntax-highlighting.git

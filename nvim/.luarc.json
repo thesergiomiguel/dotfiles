@@ -1,0 +1,5 @@
+{
+    "diagnostics.globals": [
+        "get_is_readonly"
+    ]
+}

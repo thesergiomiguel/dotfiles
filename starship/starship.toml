@@ -1,0 +1,34 @@
+# Get editor completions based on the config schema
+"$schema" = 'https://starship.rs/config-schema.json'
+
+# Inserts a blank line between shell prompts
+add_newline = false
+
+format = """
+$username\
+$hostname\
+$directory\
+$git_branch\
+$git_commit\
+$git_state\
+$git_metrics\
+$sudo\
+$cmd_duration\
+$character"""
+
+right_format = "$jobs"
+
+[character]
+success_symbol = '[%](green)'
+error_symbol = '[✘](red)'
+vimcmd_symbol = '[ normal ](bg:blue fg:#2f2f2f) [%](green)'
+vimcmd_replace_one_symbol = '[ repl ](bg:blue fg:#2f2f2f) [%](green)'
+vimcmd_replace_symbol = '[ repl ](bg:blue fg:#2f2f2f) [%](green)'
+vimcmd_visual_symbol = '[ vis ](bg:blue fg:#2f2f2f) [%](green)'
+
+[git_metrics]
+disabled = false
+
+[jobs]
+symbol = '⊚'
+format = '[$symbol](yellow)( [$number susp. jobs]($style))'

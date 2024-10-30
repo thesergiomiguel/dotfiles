@@ -4,3 +4,4 @@
 
 - [zsh](/zsh)
 - [nvim](/nvim)
+- [starship](/starship)

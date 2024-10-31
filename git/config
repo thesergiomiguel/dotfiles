@@ -1,0 +1,15 @@
+# vim: ft=gitconfig
+
+[core]
+	editor = nvim
+[init]
+	defaultBranch = main
+[alias]
+	st = status -s
+	co = checkout
+	br = branch -v
+	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+[status]
+	submodulesummary = 1
+[include]
+  path = ~/.gituser

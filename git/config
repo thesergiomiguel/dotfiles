@@ -9,6 +9,7 @@
 	co = checkout
 	br = branch -v
 	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+	pu = push -u origin
 [status]
 	submodulesummary = 1
 [include]

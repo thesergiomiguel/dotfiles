@@ -16,3 +16,7 @@ Then, just place `./git/` in `$XDG_CONFIG_HOME`:
 ```bash
 ln -s $DOTFILES/git $XDG_CONFIG_HOME/git
 ```
+
+## Dependencies
+
+A few of the aliases depend on `fzf`, which is also a dependency for neovim, the `zsh` module and, in general, life.

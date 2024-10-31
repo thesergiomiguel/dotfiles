@@ -7,10 +7,13 @@
 [alias]
 	st = status
 	co = checkout
-	br = branch -v
-	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+	br = branch --format='%(HEAD) %(color:yellow)%(refname:short)%(color:reset) - %(contents:subject) %(color:green)(%(committerdate:relative)) [%(authorname)]' --sort=-committerdate
+	tree = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
 	pu = push -u origin HEAD
 	unstage = restore --staged
+	current = rev-parse --abbrev-ref HEAD
+	remote-diff = diff HEAD..@{upstream}
+	root = rev-parse --show-toplevel
 [status]
 	submodulesummary = 1
 [include]

@@ -15,8 +15,9 @@
     tree = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
     unstage = restore --staged
     dbr = "!f() { [ -n \"$1\" ] && git branch -d \"$@\" || git branch -d $(git for-each-ref refs/heads/ --format=\"%(refname:short)\" 2> /dev/null | fzf -m); }; f"
-    fa = !git fetch -va && git pull
+    fa = !"git fetch -va && git pull"
     pull-subs = submodule foreach git pull
+    pr = !"pr() { git fetch origin pull/$1/head:pr-$1; git checkout pr-$1; }; pr"
 [status]
     submodulesummary = 1
 [include]

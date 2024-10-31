@@ -5,11 +5,12 @@
 [init]
 	defaultBranch = main
 [alias]
-	st = status -s
+	st = status
 	co = checkout
 	br = branch -v
 	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
-	pu = push -u origin
+	pu = push -u origin HEAD
+	unstage = restore --staged
 [status]
 	submodulesummary = 1
 [include]

@@ -16,17 +16,3 @@ source "$ZDOTDIR/plugins.sh"
 
 # Keep zcompdump in XDG_CACHE_HOME
 compinit -d "$XDG_CACHE_HOME/zsh/zcompdump-$ZSH_VERSION"
-
-#
-# Path
-#
-
-# Remove duplicates from $PATH
-typeset -U path
-
-path=(
-  # Custom scripts
-  "$DOTFILES/scripts"
-
-  $path
-)

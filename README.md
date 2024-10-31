@@ -2,6 +2,7 @@
 
 ## Modules
 
+- [git](/git)
 - [zsh](/zsh)
 - [nvim](/nvim)
 - [starship](/starship)

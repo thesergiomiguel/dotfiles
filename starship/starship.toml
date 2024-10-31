@@ -21,10 +21,10 @@ right_format = "$jobs"
 [character]
 success_symbol = '[%](green)'
 error_symbol = '[✘](red)'
-vimcmd_symbol = '[ normal ](bg:blue fg:#2f2f2f) [%](green)'
-vimcmd_replace_one_symbol = '[ repl ](bg:blue fg:#2f2f2f) [%](green)'
-vimcmd_replace_symbol = '[ repl ](bg:blue fg:#2f2f2f) [%](green)'
-vimcmd_visual_symbol = '[ vis ](bg:blue fg:#2f2f2f) [%](green)'
+vimcmd_symbol = '[%](green) [ n ](bg:blue fg:#2f2f2f)'
+vimcmd_replace_one_symbol = '[%](green) [ r ](bg:blue fg:#2f2f2f)'
+vimcmd_replace_symbol = '[%](green) [ R ](bg:blue fg:#2f2f2f)'
+vimcmd_visual_symbol = '[%](green) [ v ](bg:blue fg:#2f2f2f)'
 
 [git_metrics]
 disabled = false

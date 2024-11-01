@@ -1,24 +1,40 @@
 # vim: ft=gitconfig
 
 [core]
-    editor = nvim
+  editor = nvim
 [init]
-    defaultBranch = main
+  defaultBranch = main
 [alias]
-    br = branch --format='%(HEAD) %(color:yellow)%(refname:short)%(color:reset) - %(contents:subject) %(color:green)(%(committerdate:relative)) [%(authorname)]' --sort=-committerdate
-    co = "!f() { [ -n \"$1\" ] && git checkout \"$@\" || git checkout \"$(git for-each-ref refs/heads/ --format=\"%(refname:short)\" 2> /dev/null | fzf)\"; }; f"
-    current = rev-parse --abbrev-ref HEAD
-    pu = push -u origin HEAD
-    remote-diff = diff HEAD..@{upstream}
-    root = rev-parse --show-toplevel
-    st = status
-    tree = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
-    unstage = restore --staged
-    dbr = "!f() { [ -n \"$1\" ] && git branch -d \"$@\" || git branch -d $(git for-each-ref refs/heads/ --format=\"%(refname:short)\" 2> /dev/null | fzf -m); }; f"
-    fa = !"git fetch -va && git pull"
-    pull-subs = submodule foreach git pull
-    pr = !"pr() { git fetch origin pull/$1/head:pr-$1; git checkout pr-$1; }; pr"
+  br = branch --format='%(HEAD) %(color:yellow)%(refname:short)%(color:reset) - %(contents:subject) %(color:green)(%(committerdate:relative)) [%(authorname)]' --sort=-committerdate
+  co = "!f() { \
+    if [ -n \"$1\" ]; then \
+    git checkout \"$@\"; \
+    else \
+    branch=$(git for-each-ref refs/heads/ --format=\"%(refname:short)\" 2> /dev/null | fzf); \
+    [ -n \"$branch\" ] && git checkout \"$branch\"; \
+    fi; \
+    }; f"
+
+  current = rev-parse --abbrev-ref HEAD
+  dbr = "!f() { \
+    if [ -n \"$1\" ]; then \
+    git branch -d \"$@\"; \
+    else \
+    branches=$(git for-each-ref refs/heads/ --format=\"%(refname:short)\" 2> /dev/null | fzf -m); \
+    [ -n \"$branches\" ] && git branch -d $branches; \
+    fi; \
+    }; f"
+
+  pu = push -u origin HEAD
+  remote-diff = diff HEAD..@{upstream}
+  root = rev-parse --show-toplevel
+  st = status
+  tree = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+  unstage = restore --staged
+  fa = !"git fetch -va && git pull"
+  pull-subs = submodule foreach git pull
+  pr = !"pr() { git fetch origin pull/$1/head:pr-$1; git checkout pr-$1; }; pr"
 [status]
-    submodulesummary = 1
+  submodulesummary = 1
 [include]
-    path = ~/.gituser
+  path = ~/.gituser

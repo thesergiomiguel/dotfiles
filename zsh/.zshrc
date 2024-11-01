@@ -13,6 +13,3 @@ source "$ZDOTDIR/starship.sh"
 source "$ZDOTDIR/fzf.sh"
 source "$ZDOTDIR/completion.sh"
 source "$ZDOTDIR/plugins.sh"
-
-# Keep zcompdump in XDG_CACHE_HOME
-compinit -d "$XDG_CACHE_HOME/zsh/zcompdump-$ZSH_VERSION"

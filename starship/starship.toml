@@ -13,10 +13,9 @@ $git_commit\
 $git_state\
 $git_metrics\
 $sudo\
-$cmd_duration\
 $character"""
 
-right_format = "$jobs"
+right_format = "$cmd_duration$jobs"
 
 [character]
 success_symbol = '[%](green)'

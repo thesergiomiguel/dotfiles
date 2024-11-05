@@ -24,3 +24,22 @@ export SAVEHIST=10000
 export EDITOR="nvim"
 export VISUAL="nvim"
 export MANPAGER="nvim +Man!"
+
+# Path
+
+# Only unique values
+typeset -U path
+
+path=(
+  # brew
+  /opt/homebrew/bin
+  /opt/homebrew/sbin
+
+  # n
+  "$HOME/.n/bin"
+
+  # bob
+  "$XDG_DATA_HOME/bob/nvim-bin"
+
+  $path
+)

@@ -34,6 +34,7 @@
   fa = !"git fetch -va && git pull"
   pull-subs = submodule foreach git pull
   pr = !"pr() { git fetch origin pull/$1/head:pr-$1; git checkout pr-$1; }; pr"
+	feature = !git co main && git fa && git co -b
 [status]
   submodulesummary = 1
 [include]

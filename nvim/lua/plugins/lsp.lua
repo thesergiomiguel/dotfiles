@@ -30,15 +30,15 @@ return {
         -- see: https://aliquote.org/post/neovim-lsp-easy/
 
         local mappings = {
-          { 'gla', vim.lsp.buf.code_action, 'Code actions' },
-          { 'gln', vim.lsp.buf.rename, 'Rename' },
-          { 'glr', vim.lsp.buf.references, 'Code actions' },
-          { 'gld', vim.lsp.buf.definition, 'Definition' },
-          { 'glD', vim.lsp.buf.declaration, 'Declaration' },
-          { 'glk', vim.lsp.buf.signature_help, 'Signature help' },
+          { 'gla', vim.lsp.buf.code_action,     'Code actions' },
+          { 'gln', vim.lsp.buf.rename,          'Rename' },
+          { 'glr', vim.lsp.buf.references,      'Code actions' },
+          { 'gld', vim.lsp.buf.definition,      'Definition' },
+          { 'glD', vim.lsp.buf.declaration,     'Declaration' },
+          { 'glk', vim.lsp.buf.signature_help,  'Signature help' },
           { 'glt', vim.lsp.buf.type_definition, 'Type def.' },
-          { 'gli', vim.lsp.buf.implementation, 'Implementation' },
-          { 'gl=', vim.lsp.buf.format, 'Format (lsp)' },
+          { 'gli', vim.lsp.buf.implementation,  'Implementation' },
+          { 'gl=', vim.lsp.buf.format,          'Format (lsp)' },
 
           {
             '<M-l>h',
@@ -86,6 +86,23 @@ return {
     lspconfig.eslint.setup {}
     lspconfig.tailwindcss.setup {}
     lspconfig.jsonls.setup {}
+
+    -- vtsls
+    require('lspconfig.configs').vtsls = require('vtsls').lspconfig
+    lspconfig.vtsls.setup {
+      settings = {
+        typescript = {
+          inlayHints = {
+            parameterNames = { enabled = 'literals' },
+            parameterTypes = { enabled = true },
+            variableTypes = { enabled = true },
+            propertyDeclarationTypes = { enabled = true },
+            functionLikeReturnTypes = { enabled = true },
+            enumMemberValues = { enabled = true },
+          },
+        },
+      },
+    }
 
     lspconfig.lua_ls.setup {
       on_init = function(client)

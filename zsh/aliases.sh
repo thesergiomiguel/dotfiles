@@ -14,10 +14,10 @@ if is_available "eza"; then
 fi
 
 alias ..="cd .."
-alias ...="cd ..."
-alias ....="cd ...."
-alias .....="cd ....."
-alias ......="cd ......"
+alias ...="cd ../.."
+alias ....="cd ../../.."
+alias .....="cd ../../../.."
+alias ......="cd ../../../../.."
 
 # Add our custom fns path to $fpath and autoload all files in it
 # This isn't working, so let's just source the files

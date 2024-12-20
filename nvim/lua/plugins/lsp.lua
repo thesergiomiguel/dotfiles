@@ -29,16 +29,19 @@ return {
       callback = function(ev)
         -- see: https://aliquote.org/post/neovim-lsp-easy/
 
+        ---@format disable
         local mappings = {
-          { 'gla', vim.lsp.buf.code_action,     'Code actions' },
-          { 'gln', vim.lsp.buf.rename,          'Rename' },
-          { 'glr', vim.lsp.buf.references,      'Code actions' },
-          { 'gld', vim.lsp.buf.definition,      'Definition' },
-          { 'glD', vim.lsp.buf.declaration,     'Declaration' },
-          { 'glk', vim.lsp.buf.signature_help,  'Signature help' },
-          { 'glt', vim.lsp.buf.type_definition, 'Type def.' },
-          { 'gli', vim.lsp.buf.implementation,  'Implementation' },
-          { 'gl=', vim.lsp.buf.format,          'Format (lsp)' },
+          {
+            '<C-w><C-]>',
+            function()
+              vim.cmd 'tab split'
+              vim.lsp.buf.definition()
+            end,
+            'Definition',
+          },
+          { 'grD', vim.lsp.buf.declaration, 'Declaration' },
+          { 'grt', vim.lsp.buf.type_definition, 'Type def.' },
+          { 'gr=', vim.lsp.buf.format, 'Format (lsp)' },
 
           {
             '<M-l>h',
@@ -48,11 +51,11 @@ return {
             'Toggle inlay hints',
           },
         }
+        ---@format enable
 
         for _, mapping in pairs(mappings) do
           local lhs, rhs, desc = unpack(mapping)
-          local opts = { buffer = ev.bufnr, desc = desc }
-
+          local opts = { buffer = ev.buf, desc = desc }
           vim.keymap.set({ 'n', 'v' }, lhs, rhs, opts)
         end
       end,

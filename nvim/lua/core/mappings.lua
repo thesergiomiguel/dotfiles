@@ -21,6 +21,16 @@ local function cycle_qf_items(direction)
   end
 end
 
+local function toggle_clipboard()
+  if vim.o.clipboard == 'unnamedplus' then
+    vim.o.clipboard = ''
+    print 'cb='
+  else
+    vim.o.clipboard = 'unnamedplus'
+    print 'cb=unnamedplus'
+  end
+end
+
 local mappings = {
   ---@format disable
   [{ 'n', 'x' }] = {
@@ -42,11 +52,19 @@ local mappings = {
     -- Why for the love of god is vim still printing errors when we hit the end of the list??
     { ']q', cycle_qf_items 'forward', 'Cycle qf items to the right' },
     { '[q', cycle_qf_items 'backwards', 'Cycle qf items to the left' },
+
+    { '<M-t>c', toggle_clipboard, 'Toggle clipboard' },
   },
 
   ['i'] = {
     { '<M-esc>', '<esc><cmd>nohlsearch<cr>a', ':nohlsearch' },
     { '<M-p>', '"', 'put' },
+  },
+
+  ['v'] = {
+    -- moving lines/blocks in visual mode with indenting.
+    { 'J', ":m '>+1<CR>gv=gv" },
+    { 'K', ":m '<-2<CR>gv=gv" },
   },
   ---@format enable
 }

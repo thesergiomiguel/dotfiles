@@ -22,4 +22,8 @@ require 'core.mappings'
 require 'core.packages'
 require 'core.autocmds'
 
-vim.cmd.colorscheme 'github_dark'
+if vim.o.background == 'dark' then
+  vim.cmd.colorscheme 'github_dark'
+else
+  vim.cmd.colorscheme 'github_light'
+end

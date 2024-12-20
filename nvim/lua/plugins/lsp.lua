@@ -89,23 +89,7 @@ return {
     lspconfig.eslint.setup {}
     lspconfig.tailwindcss.setup {}
     lspconfig.jsonls.setup {}
-
-    -- vtsls
-    require('lspconfig.configs').vtsls = require('vtsls').lspconfig
-    lspconfig.vtsls.setup {
-      settings = {
-        typescript = {
-          inlayHints = {
-            parameterNames = { enabled = 'literals' },
-            parameterTypes = { enabled = true },
-            variableTypes = { enabled = true },
-            propertyDeclarationTypes = { enabled = true },
-            functionLikeReturnTypes = { enabled = true },
-            enumMemberValues = { enabled = true },
-          },
-        },
-      },
-    }
+    lspconfig.ts_ls.setup {}
 
     lspconfig.lua_ls.setup {
       on_init = function(client)

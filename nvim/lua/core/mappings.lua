@@ -54,6 +54,9 @@ local mappings = {
     { '[q', cycle_qf_items 'backwards', 'Cycle qf items to the left' },
 
     { '<M-t>c', toggle_clipboard, 'Toggle clipboard' },
+
+    -- diff unsaved changes
+    { '<M-g>ch', '<cmd>DiffOrig<cr>', 'Diff unsaved changes' },
   },
 
   ['i'] = {

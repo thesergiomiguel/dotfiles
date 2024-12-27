@@ -18,6 +18,7 @@ end
 bootstrap()
 
 require 'core.settings'
+require 'core.commands'
 require 'core.mappings'
 require 'core.packages'
 require 'core.autocmds'

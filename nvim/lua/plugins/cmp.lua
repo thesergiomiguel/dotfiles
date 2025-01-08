@@ -37,6 +37,22 @@ return {
           s = cmp.mapping.confirm { select = true },
           c = cmp.mapping.confirm { behavior = cmp.ConfirmBehavior.Replace, select = false },
         },
+
+        ['<Tab>'] = function(fallback)
+          if luasnip.expand_or_jumpable() then
+            luasnip.jump(1)
+          else
+            fallback()
+          end
+        end,
+
+        ['<S-Tab>'] = function(fallback)
+          if luasnip.jumpable(-1) then
+            luasnip.jump(-1)
+          else
+            fallback()
+          end
+        end,
       },
 
       snippet = {

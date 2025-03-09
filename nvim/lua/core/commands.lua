@@ -5,7 +5,7 @@ vim.api.nvim_create_user_command('DiffOrig', function()
   local filetype = vim.api.nvim_get_option_value('filetype', { buf = original })
 
   -- Also get window id so we can re-enable Barbecue later on
-  local original_win_num = vim.api.nvim_get_current_win()
+  -- local original_win_num = vim.api.nvim_get_current_win()
 
   -- Create new scratch buffer and load current file
   vim.cmd 'vertical new'
@@ -25,7 +25,7 @@ vim.api.nvim_create_user_command('DiffOrig', function()
   vim.cmd.diffthis()
 
   -- Disable Barbecue in original window
-  vim.cmd 'Barbecue hide'
+  -- vim.cmd 'Barbecue hide'
 
   -- Map `q` for both buffers to exit diff view and delete scratch buffer
   for _, buf in ipairs { scratch, original } do
@@ -35,9 +35,9 @@ vim.api.nvim_create_user_command('DiffOrig', function()
       vim.keymap.del('n', 'q', { buffer = original })
 
       -- Re-enable Barbecue in original window
-      vim.api.nvim_win_call(original_win_num, function()
-        vim.cmd 'Barbecue show'
-      end)
+      -- vim.api.nvim_win_call(original_win_num, function()
+      --   vim.cmd 'Barbecue show'
+      -- end)
     end, { buffer = buf })
   end
 end, {})

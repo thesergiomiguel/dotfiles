@@ -1,20 +1,7 @@
 -- [nfnl] lua/plugins/formatter.fnl
 local function format_buf()
   local root_10_auto = require("conform")
-  local parts_11_auto
-  do
-    local tbl_21_ = {}
-    local i_22_ = 0
-    for part_9_auto in string.gmatch("format", ("([^" .. "." .. "]+)")) do
-      local val_23_ = part_9_auto
-      if (nil ~= val_23_) then
-        i_22_ = (i_22_ + 1)
-        tbl_21_[i_22_] = val_23_
-      else
-      end
-    end
-    parts_11_auto = tbl_21_
-  end
+  local parts_11_auto = {"format"}
   local leaf_12_auto = root_10_auto
   for __13_auto, part_14_auto in ipairs(parts_11_auto) do
     leaf_12_auto = leaf_12_auto[part_14_auto]
@@ -23,14 +10,14 @@ local function format_buf()
 end
 local function toggle_buf_autoformat()
   vim.b["disable_autoformat"] = not vim.b.disable_autoformat
-  local function _2_()
+  local function _1_()
     if vim.b.disable_autoformat then
       return "Autoformat disabled for this buffer"
     else
       return "Autoformat enabled for this buffer"
     end
   end
-  return print(_2_())
+  return print(_1_())
 end
 local function setup_conform()
   local conform = require("conform")

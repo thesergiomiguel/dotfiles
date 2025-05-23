@@ -12,5 +12,5 @@
   (disable-pair "`"))
 
 (use! :windwp/nvim-autopairs
-      {:event :InsertEnter
+      {;:event :InsertEnter
        :config setup-autopairs})

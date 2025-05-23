@@ -6,17 +6,17 @@ local function disable_pair(c)
     local root_10_auto = require("nvim-autopairs")
     local parts_11_auto
     do
-      local tbl_19_auto = {}
-      local i_20_auto = 0
+      local tbl_21_ = {}
+      local i_22_ = 0
       for part_9_auto in string.gmatch("get_rules", ("([^" .. "." .. "]+)")) do
-        local val_21_auto = part_9_auto
-        if (nil ~= val_21_auto) then
-          i_20_auto = (i_20_auto + 1)
-          tbl_19_auto[i_20_auto] = val_21_auto
+        local val_23_ = part_9_auto
+        if (nil ~= val_23_) then
+          i_22_ = (i_22_ + 1)
+          tbl_21_[i_22_] = val_23_
         else
         end
       end
-      parts_11_auto = tbl_19_auto
+      parts_11_auto = tbl_21_
     end
     local leaf_12_auto = root_10_auto
     for __13_auto, part_14_auto in ipairs(parts_11_auto) do
@@ -33,17 +33,17 @@ local function setup_autopairs()
     local root_10_auto = require("nvim-autopairs")
     local parts_11_auto
     do
-      local tbl_19_auto = {}
-      local i_20_auto = 0
+      local tbl_21_ = {}
+      local i_22_ = 0
       for part_9_auto in string.gmatch("setup", ("([^" .. "." .. "]+)")) do
-        local val_21_auto = part_9_auto
-        if (nil ~= val_21_auto) then
-          i_20_auto = (i_20_auto + 1)
-          tbl_19_auto[i_20_auto] = val_21_auto
+        local val_23_ = part_9_auto
+        if (nil ~= val_23_) then
+          i_22_ = (i_22_ + 1)
+          tbl_21_[i_22_] = val_23_
         else
         end
       end
-      parts_11_auto = tbl_19_auto
+      parts_11_auto = tbl_21_
     end
     local leaf_12_auto = root_10_auto
     for __13_auto, part_14_auto in ipairs(parts_11_auto) do
@@ -54,4 +54,4 @@ local function setup_autopairs()
   disable_pair("'")
   return disable_pair("`")
 end
-return {"windwp/nvim-autopairs", event = "InsertEnter", config = setup_autopairs}
+return {"windwp/nvim-autopairs", config = setup_autopairs}

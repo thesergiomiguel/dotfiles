@@ -1,23 +1,30 @@
 ;; [nfnl-macro]
 
+(local {: string-split} (require :utils))
+
+;;
+;; Package
+;;
+
 (fn use! [pkg opts]
   "Returns a package spec."
   (let [opts (or opts {})]
     (tset opts 1 pkg)
     opts))
 
+;;
 ;; Vim helpers
+;;
 
 (fn cmd [x & xs]
   (let [args [x (unpack xs)]]
     (.. :<cmd> (table.concat args " ") :<cr>)))
 
-(local default-map-opts {})
-
 (fn map! [modes lhs rhs opts]
+  (local default-map-opts {})
   (let [modes (icollect [c (string.gmatch modes ".")] c)
-        opts (or opts default-map-opts)]
-    `(vim.keymap.set ,modes ,lhs ,rhs ,opts)))
+        opts# (or opts default-map-opts)]
+    `(vim.keymap.set ,modes ,lhs ,rhs ,opts#)))
 
 (fn set! [k v]
   `(tset vim.o ,k ,v))
@@ -42,17 +49,6 @@
             (set found# true)))
        found#)))
 
-(fn filter [t f]
-  `(let [t# (or ,t [])]
-     (icollect [_# v# (ipairs t#)]
-      (if (,f v#)
-          v#
-          nil))))
-
-(fn string-split [str sep]
-  `(icollect [part# (string.gmatch ,str (.. "([^" ,sep "]+)"))]
-     part#))
-
 ;; Utils
 
 (fn call-nested [root path ...]
@@ -73,8 +69,6 @@
  : get-g!
  : use!
  : contains?
- : filter
- : string-split
  : call-nested}
 
 ; TODO

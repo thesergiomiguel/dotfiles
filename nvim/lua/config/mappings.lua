@@ -1,0 +1,22 @@
+-- [nfnl] lua/config/mappings.fnl
+vim.keymap.set({"n"}, "<leader>q", "<cmd>confirm quitall<cr>", {desc = "Quit all?"})
+vim.keymap.set({"n"}, "<localleader>q", "<cmd>confirm quit<cr>", {desc = "Quit?"})
+vim.keymap.set({"n"}, "<localleader>bd", "<cmd>confirm bdelete<cr>", {desc = "Delete buffer?"})
+vim.keymap.set({"n"}, "<localleader>bD", "<cmd>bdelete!<cr>", {desc = "Delete buffer!"})
+vim.keymap.set({"n"}, "<localleader>w", "<cmd>update<cr>", {desc = "Maybe :update"})
+vim.keymap.set({"n"}, "<localleader>W", "<cmd>write<cr>", {desc = "Maybe :write"})
+vim.keymap.set({"n"}, "<localleader>e", "<cmd>edit<cr>", {desc = "Edit"})
+vim.keymap.set({"n"}, "<M-*>", "*N", {desc = "Find (c)word"})
+vim.keymap.set({"v"}, "K", ":m '<-2<CR>gv=gv", {desc = "Move up + indent"})
+vim.keymap.set({"v"}, "J", ":m '>+1<CR>gv=gv", {desc = "Move down + indent"})
+vim.keymap.set({"n", "x"}, "<M-]>", "gt", {desc = ":tabnext"})
+vim.keymap.set({"n", "x"}, "<M-[>", "gT", {desc = ":tabprev"})
+local function _1_()
+  return pcall(vim.cmd.tabmove, "-1")
+end
+vim.keymap.set({"n", "x"}, "<C-w>[", _1_, {desc = "Move tab left"})
+local function _2_()
+  return pcall(vim.cmd.tabmove, "+1")
+end
+vim.keymap.set({"n", "x"}, "<C-w>]", _2_, {desc = "Move tab right"})
+return vim.keymap.set({"n", "x"}, "<C-w>n", "<cmd>tab split<cr>", {desc = "New tab, keep cursor"})

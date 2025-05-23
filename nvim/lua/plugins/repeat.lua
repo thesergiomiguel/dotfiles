@@ -1,3 +1,2 @@
-return {
-  'tpope/vim-repeat',
-}
+-- [nfnl] lua/plugins/repeat.fnl
+return {"tpope/vim-repeat"}

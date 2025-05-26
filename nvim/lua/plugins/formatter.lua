@@ -1,12 +1,12 @@
 -- [nfnl] lua/plugins/formatter.fnl
 local function format_buf()
-  local root_10_auto = require("conform")
-  local parts_11_auto = {"format"}
-  local leaf_12_auto = root_10_auto
-  for __13_auto, part_14_auto in ipairs(parts_11_auto) do
-    leaf_12_auto = leaf_12_auto[part_14_auto]
+  local root_3_auto = require("conform")
+  local parts_4_auto = {"format"}
+  local leaf_5_auto = root_3_auto
+  for __6_auto, part_7_auto in ipairs(parts_4_auto) do
+    leaf_5_auto = leaf_5_auto[part_7_auto]
   end
-  return leaf_12_auto()
+  return leaf_5_auto()
 end
 local function toggle_buf_autoformat()
   vim.b["disable_autoformat"] = not vim.b.disable_autoformat

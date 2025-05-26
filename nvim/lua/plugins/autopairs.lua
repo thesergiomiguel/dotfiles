@@ -3,13 +3,13 @@ local function disable_pair(c)
   local rule
   local _1_
   do
-    local root_10_auto = require("nvim-autopairs")
-    local parts_11_auto = {"get_rules"}
-    local leaf_12_auto = root_10_auto
-    for __13_auto, part_14_auto in ipairs(parts_11_auto) do
-      leaf_12_auto = leaf_12_auto[part_14_auto]
+    local root_3_auto = require("nvim-autopairs")
+    local parts_4_auto = {"get_rules"}
+    local leaf_5_auto = root_3_auto
+    for __6_auto, part_7_auto in ipairs(parts_4_auto) do
+      leaf_5_auto = leaf_5_auto[part_7_auto]
     end
-    _1_ = leaf_12_auto(c)
+    _1_ = leaf_5_auto(c)
   end
   rule = _1_[1]
   rule["not_filetypes"] = {"lisp", "scheme", "racket", "fennel"}
@@ -17,13 +17,13 @@ local function disable_pair(c)
 end
 local function setup_autopairs()
   do
-    local root_10_auto = require("nvim-autopairs")
-    local parts_11_auto = {"setup"}
-    local leaf_12_auto = root_10_auto
-    for __13_auto, part_14_auto in ipairs(parts_11_auto) do
-      leaf_12_auto = leaf_12_auto[part_14_auto]
+    local root_3_auto = require("nvim-autopairs")
+    local parts_4_auto = {"setup"}
+    local leaf_5_auto = root_3_auto
+    for __6_auto, part_7_auto in ipairs(parts_4_auto) do
+      leaf_5_auto = leaf_5_auto[part_7_auto]
     end
-    leaf_12_auto({})
+    leaf_5_auto({})
   end
   disable_pair("'")
   return disable_pair("`")

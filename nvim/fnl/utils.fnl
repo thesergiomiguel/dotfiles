@@ -13,7 +13,7 @@
     part))
 
 (fn filter [t f]
-  "Filters a table using function `f`."
+  "Filters a table using function `f`"
   (icollect [_ v# (ipairs t)]
     (if (f v#)
        v#

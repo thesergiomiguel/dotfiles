@@ -11,35 +11,35 @@ local function seq_3f(t)
   return not _1_
 end
 local function string_split(str, sep)
-  local tbl_19_auto = {}
-  local i_20_auto = 0
+  local tbl_21_ = {}
+  local i_22_ = 0
   for part in string.gmatch(str, ("([^" .. sep .. "]+)")) do
-    local val_21_auto = part
-    if (nil ~= val_21_auto) then
-      i_20_auto = (i_20_auto + 1)
-      tbl_19_auto[i_20_auto] = val_21_auto
+    local val_23_ = part
+    if (nil ~= val_23_) then
+      i_22_ = (i_22_ + 1)
+      tbl_21_[i_22_] = val_23_
     else
     end
   end
-  return tbl_19_auto
+  return tbl_21_
 end
 local function filter(t, f)
-  local tbl_19_auto = {}
-  local i_20_auto = 0
+  local tbl_21_ = {}
+  local i_22_ = 0
   for _, v_23 in ipairs(t) do
-    local val_21_auto
+    local val_23_
     if f(v_23) then
-      val_21_auto = v_23
+      val_23_ = v_23
     else
-      val_21_auto = nil
+      val_23_ = nil
     end
-    if (nil ~= val_21_auto) then
-      i_20_auto = (i_20_auto + 1)
-      tbl_19_auto[i_20_auto] = val_21_auto
+    if (nil ~= val_23_) then
+      i_22_ = (i_22_ + 1)
+      tbl_21_[i_22_] = val_23_
     else
     end
   end
-  return tbl_19_auto
+  return tbl_21_
 end
 local function contains_3f(t, v)
   if seq_3f(t) then

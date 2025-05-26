@@ -38,17 +38,6 @@
 (fn get-g! [k]
   `(. vim.g ,k))
 
-;; Lang-related macros
-
-(fn contains? [t v]
-  `(do
-     (var found# false)
-     (let [t# (or ,t {})]
-       (each [_# curr# (ipairs t#) &until found#]
-        (when (= ,v curr#)
-            (set found# true)))
-       found#)))
-
 ;; Utils
 
 (fn call-nested [root path ...]
@@ -68,7 +57,6 @@
  : let-g!
  : get-g!
  : use!
- : contains?
  : call-nested}
 
 ; TODO

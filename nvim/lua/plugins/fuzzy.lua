@@ -17,4 +17,4 @@ local function setup_telescope()
   return telescope.load_extension("fzf")
 end
 local fzf_native = {"nvim-telescope/telescope-fzf-native.nvim", build = "cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release"}
-return {"nvim-telescope/telescope.nvim", enabled = true, tag = "0.1.8", dependencies = {"nvim-lua/plenary.nvim", fzf_native}, config = setup_telescope}
+return {"nvim-telescope/telescope.nvim", enabled = true, dependencies = {"nvim-lua/plenary.nvim", fzf_native}, config = setup_telescope}
